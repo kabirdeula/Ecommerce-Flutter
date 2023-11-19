@@ -5,7 +5,8 @@ import 'package:ecommerce/models/model.product.dart';
 import 'package:http/http.dart' as http;
 
 Future<List<Product>> fetchProduct() async {
-  const String apiUrl = "$baseUrl/api/products";
+  // const String apiUrl = "$baseUrl/products";
+  const String apiUrl = baseUrl + productEndpoint;
   try {
     await Future.delayed(const Duration(seconds: 2));
 
