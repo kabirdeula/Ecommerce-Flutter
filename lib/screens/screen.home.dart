@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_print
-import 'package:ecommerce/models/model.product.dart';
+import 'package:ecommerce/data/model/product_model.dart';
 import 'package:ecommerce/screens/product/product_list.dart';
 import 'package:ecommerce/widgets/custom_search_delegate.dart';
 import 'package:flutter/material.dart';
