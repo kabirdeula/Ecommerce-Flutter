@@ -1,8 +1,11 @@
 import 'dart:convert';
+import 'dart:io';
+
+import 'package:ecommerce/base/utils.dart';
+import 'package:http/http.dart' as http;
 
 import 'package:ecommerce/config/config.dart';
-import 'package:ecommerce/models/model.product.dart';
-import 'package:http/http.dart' as http;
+import 'package:ecommerce/data/model/product_model.dart';
 
 Future<List<Product>> fetchProduct() async {
   // const String apiUrl = "$baseUrl/products";
@@ -18,9 +21,14 @@ Future<List<Product>> fetchProduct() async {
           jsonData.map((data) => Product.fromMap(data)).toList();
       return products;
     } else {
-      throw Exception("Failed to load products");
+      return Utils.log('Failed to load products');
+      // throw Exception("Failed to load products");
     }
+  } on SocketException catch (e) {
+    return Utils.log(e.toString());
+  } on http.ClientException catch (e) {
+    return Utils.log(e.toString());
   } catch (error) {
-    throw Exception(error.toString());
+    return Utils.log(error.toString());
   }
 }
