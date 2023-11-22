@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+import 'package:ecommerce/base/utils.dart';
 import 'package:ecommerce/data/model/product_model.dart';
 import 'package:ecommerce/screens/product/product_list.dart';
 import 'package:ecommerce/widgets/custom_search_delegate.dart';
@@ -36,12 +36,14 @@ class HomeScreen extends StatelessWidget {
         child: FutureBuilder<List<Product>>(
           future: products,
           builder: (context, snapshot) {
-            if (snapshot.hasError) print(snapshot.error);
-            return snapshot.hasData
-                ? ProductList(items: snapshot.data!)
-                : const Center(
-                    child: CircularProgressIndicator(),
-                  );
+            if (snapshot.hasError) {
+              return Utils.log(snapshot.error.toString());
+            }
+            if (snapshot.hasData) {
+              return ProductList(items: snapshot.data!);
+            } else {
+              return const Center(child: CircularProgressIndicator());
+            }
           },
         ),
       ),
