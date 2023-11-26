@@ -1,8 +1,10 @@
+import 'package:ecommerce/base/strings.dart';
+import 'package:flutter/material.dart';
+
 import 'package:ecommerce/base/utils.dart';
 import 'package:ecommerce/data/model/product_model.dart';
 import 'package:ecommerce/screens/product/product_list.dart';
-import 'package:ecommerce/widgets/custom_search_delegate.dart';
-import 'package:flutter/material.dart';
+import 'package:ecommerce/widgets/custom_app_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   final String title;
@@ -17,19 +19,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Daraz Lite'),
-        actions: [
-          IconButton(
-            onPressed: () {
-              showSearch(
-                context: context,
-                delegate: CustomSearchDelegate(),
-              );
-            },
-            icon: const Icon(Icons.search),
-          ),
-        ],
+      appBar: CustomAppBar(
+        title: Strings.appTitle,
       ),
       body: Center(
         child: FutureBuilder<List<Product>>(
