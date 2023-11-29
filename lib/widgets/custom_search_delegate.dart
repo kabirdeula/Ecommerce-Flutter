@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
-import 'package:ecommerce/controllers/controller.product.dart';
-import 'package:ecommerce/data/model/product_model.dart';
+import 'package:ecommerce/screens/home/controllers/product_controller.dart';
+import 'package:ecommerce/screens/home/model/product_model.dart';
 import 'package:flutter/material.dart';
 
 class CustomSearchDelegate extends SearchDelegate {

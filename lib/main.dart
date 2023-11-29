@@ -1,10 +1,11 @@
 // ignore_for_file: avoid_print
 
-import 'package:ecommerce/base/app_theme.dart';
-import 'package:ecommerce/controllers/controller.product.dart';
-import 'package:ecommerce/data/model/product_model.dart';
-import 'package:ecommerce/screens/screen.home.dart';
 import 'package:flutter/material.dart';
+
+import 'package:ecommerce/base/app_theme.dart';
+import 'package:ecommerce/screens/home/controllers/product_controller.dart';
+import 'package:ecommerce/screens/home/model/product_model.dart';
+import 'package:ecommerce/screens/main_screen.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -34,10 +35,7 @@ class _MyAppState extends State<MyApp> {
         appBarTheme: appBarTheme,
         useMaterial3: true,
       ),
-      home: HomeScreen(
-        products: products,
-        title: 'Daraz Lite',
-      ),
+      home: const MainScreen(),
     );
   }
 }

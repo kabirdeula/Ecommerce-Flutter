@@ -5,7 +5,7 @@ import 'package:ecommerce/base/utils.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:ecommerce/config/config.dart';
-import 'package:ecommerce/data/model/product_model.dart';
+import 'package:ecommerce/screens/home/model/product_model.dart';
 
 Future<List<Product>> fetchProduct() async {
   // const String apiUrl = "$baseUrl/products";
