@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:ecommerce/base/app_theme.dart';
-import 'package:ecommerce/controllers/controller.product.dart';
-import 'package:ecommerce/data/model/product_model.dart';
+import 'package:ecommerce/screens/home/controllers/product_controller.dart';
+import 'package:ecommerce/screens/home/model/product_model.dart';
 import 'package:ecommerce/screens/main_screen.dart';
 
 void main() async {
