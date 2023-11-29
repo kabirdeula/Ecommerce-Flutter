@@ -4,6 +4,6 @@ import 'app_colors.dart';
 
 final appBarTheme = AppBarTheme(
   backgroundColor: AppColors.lWhiteColor,
-  elevation: 4.0,
+  // elevation: 8.0,
   centerTitle: true,
 );
